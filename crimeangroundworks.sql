@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `crimeangroundworks`
+-- База данных: `mydress`
 --
 
 -- --------------------------------------------------------
@@ -96,8 +96,8 @@ CREATE TABLE `moderator_models` (
 --
 
 INSERT INTO `moderator_models` (`nickname`, `password`) VALUES
-('drozin', 'asdf'),
-('zabash', 'qwerty');
+('darya', 'qwerty1'),
+('naima', 'qwerty');
 
 -- --------------------------------------------------------
 
@@ -167,8 +167,8 @@ CREATE TABLE `user_models` (
 --
 
 INSERT INTO `user_models` (`email`, `password`, `FIO`) VALUES
-('123vanyacot123@gmail.com', 'qwerty', 'Дымченко Ирина Вячеславовна'),
-('wocker@i.ua', 'йцукен', 'Дарья');
+('123@gmail.com', 'qwerty', 'Иван Иванов Иванович'),
+('a@mail.ru', 'йцукен', 'Дарья');
 
 --
 -- Индексы сохранённых таблиц
