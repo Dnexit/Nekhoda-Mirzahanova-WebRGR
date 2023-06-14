@@ -19,16 +19,16 @@
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal text-dark">Котлован</h4>
+                            <h4 class="my-0 font-weight-normal text-dark">Футболка</h4>
                         </div>
                         <div class="card-body">
-                            <p class="text-dark">Ширина проезда</p>
+                            <p class="text-dark">Ширина рукова</p>
                             <input type="number" name="pass-width" class="form-control" placeholder="Ширина (см)">
 
-                            <p class="text-dark">Высота проезда</p>
-                            <input type="number" name="pass-height" class="form-control" placeholder="Высота (см)">
+                            <p class="text-dark">Длина рукова</p>
+                            <input type="number" name="pass-height" class="form-control" placeholder="Длина (см)">
 
-                            <p class="text-dark">Нужен поиск коммуникаций?</p>
+                            <p class="text-dark">Нужен принт на футболку?</p>
                             <select class="form-select" name="communications-search" aria-label="Default select example">
                                 <option selected value="1">Нет</option>
                                 <option value="2">Да</option>

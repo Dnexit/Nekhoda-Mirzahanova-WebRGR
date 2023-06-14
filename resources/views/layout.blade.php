@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/4.0/examples/pricing/pricing.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 
 </head>
 
