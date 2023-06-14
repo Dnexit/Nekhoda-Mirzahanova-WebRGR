@@ -13,10 +13,6 @@ class CalcController extends Controller
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
-            'trench-lenght' => 'required',
-            'trench-depth' => 'required',
-            'trench-width' => 'required',
-            'delivery' => 'required',
         ]);
 
         $price = 0;
@@ -79,7 +75,7 @@ class CalcController extends Controller
         $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
         if($request['ground-type']>1)
         {
-            $price = $price."₽ + 2500₽/час";
+            $price = $price."₽ + 2500₽";
         }
         else
         {
@@ -101,10 +97,6 @@ class CalcController extends Controller
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
-            'pit-lenght' => 'required',
-            'pit-depth' => 'required',
-            'pit-width' => 'required',
-            'delivery' => 'required',
         ]);
 
         $price = 0;
@@ -115,7 +107,7 @@ class CalcController extends Controller
                 else
                     $price = 7000;
             else if($request['delivery'] == 1) {
-                $price = '2000₽ + 2500₽/час';
+                $price = '2000₽ + 2500₽';
                 $data = ['price' => $price];
                 return view('price', $data);
             }
@@ -131,7 +123,7 @@ class CalcController extends Controller
         $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
         if($request['ground-type']>1)
         {
-            $price = $price."₽ + 2500₽/час";
+            $price = $price."₽ + 2500₽";
         }
         else
         {
@@ -151,10 +143,6 @@ class CalcController extends Controller
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
-            'area-lenght' => 'required',
-            'area-max-length' => 'required',
-            'area-width' => 'required',
-            'delivery' => 'required',
         ]);
 
         $price = 0;
@@ -171,7 +159,7 @@ class CalcController extends Controller
         $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
         if($request['ground-type']>5)
         {
-            $price = $price."₽ + 2500₽/час";
+            $price = $price."₽ + 2500₽";
         }
         else
         {
@@ -192,10 +180,6 @@ class CalcController extends Controller
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
-            'area-lenght' => 'required',
-            'area-max-length' => 'required',
-            'area-width' => 'required',
-            'delivery' => 'required',
         ]);
 
         $price = 0;
@@ -212,7 +196,7 @@ class CalcController extends Controller
         $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
         if($request['ground-type']>5)
         {
-            $price = $price."₽ + 2500₽/час";
+            $price = $price."₽ + 2500₽";
         }
         else
         {
@@ -233,9 +217,6 @@ class CalcController extends Controller
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
-            'hole-depth' => 'required',
-            'trench-width' => 'required',
-            'delivery' => 'required',
         ]);
 
         $price = 0;
@@ -244,7 +225,7 @@ class CalcController extends Controller
             if($request['trench-width'] <= 12)
             {
                 $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-                $price += ' + 2000₽/час';
+                //$price += ' + 2000₽';
                 $data = ['price' => $price];
                 return view('price', $data);
             }
@@ -297,10 +278,6 @@ class CalcController extends Controller
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
-            'area-lenght' => 'required',
-            'foundation-depth' => 'required',
-            'area-width' => 'required',
-            'delivery' => 'required',
         ]);
 
         $price = 0;

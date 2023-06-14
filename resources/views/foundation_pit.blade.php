@@ -34,10 +34,12 @@
                                 <option value="2">Да</option>
                             </select>
                             <select class="form-select" name="delivery" aria-label="Default select example">
+                            </select>
                             <button type="submit" href="/main" class="btn btn-lg btn-block btn-primary m-3">Рассчитать</button>
                         </div>
                     </div>
                 </div>
+            </div>
         </form>
     </div>
 @endsection
