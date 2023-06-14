@@ -19,43 +19,20 @@
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal text-dark">Планировка</h4>
+                            <h4 class="my-0 font-weight-normal text-dark">Носки</h4>
                         </div>
                         <div class="card-body">
-                            <p class="text-dark">Ширина проезда</p>
-                            <input type="number" name="pass-width" class="form-control" placeholder="Ширина (см)">
+                            <p class="text-dark">Размер стопы</p>
+                            <input type="number" name="pass-width" class="form-control" placeholder="Размер стопы (см)">
 
-                            <p class="text-dark">Высота проезда</p>
+                            <p class="text-dark">Высота носка</p>
                             <input type="number" name="pass-height" class="form-control" placeholder="Высота (см)">
 
-                            <p class="text-dark">Нужен поиск коммуникаций?</p>
+                            <p class="text-dark">Нужен присунок на носке?</p>
                             <select class="form-select" name="communications-search" aria-label="Default select example">
                                 <option selected value="1">Нет</option>
                                 <option value="2">Да</option>
                             </select>
-
-                            <p class="text-dark">Длина участка</p>
-                            <input type="number" name="area-lenght" class="form-control" placeholder="Длина (м)">
-
-                            <p class="text-dark">Высота наивысшей точки участка</p>
-                            <input type="number" name="area-max-height" class="form-control" placeholder="Высота (м)">
-
-                            <p class="text-dark">Ширина участка</p>
-                            <input type="number" name="area-width" class="form-control" placeholder="Ширина (м)">
-
-                            <p class="text-dark">Местоположение</p>
-                            <select class="form-select" name="delivery" aria-label="Default select example">
-                                <option selected>Выберите ваше местоположение</option>
-                                <option value="1">Симферополь</option>
-                                <option value="2">ЮБК</option>
-                                <option value="3">Не Симферополь и не ЮБК</option>
-                            </select>
-
-                            <div>
-                                <p class="text-dark">Расстояние от симферополя до вашего местоположения</p>
-                                <input type="number" name="distance" class="form-control" placeholder="Введите расстояние (Если вы не в Симферополе и не в ЮБК) (км)">
-                            </div>
-
                             <button type="submit" href="/main" class="btn btn-lg btn-block btn-primary m-3">Рассчитать</button>
                         </div>
                     </div>

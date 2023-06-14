@@ -19,50 +19,28 @@
                 <div class="card-deck mb-3 text-center">
                     <div class="card mb-4 box-shadow">
                         <div class="card-header">
-                            <h4 class="my-0 font-weight-normal text-dark">Яма</h4>
+                            <h4 class="my-0 font-weight-normal text-dark">Топ</h4>
                         </div>
                         <div class="card-body">
-                            <p class="text-dark">Тип грунта</p>
+                            <p class="text-dark">Тип топа</p>
                                 <select class="form-select" name="ground-type" aria-label="Default select example">
-                                    <option selected>Выбери тип грунта</option>
-                                    <option value="1">Копаемый</option>
-                                    <option value="2">Скальный</option>
-                                    <option value="3">Полускальный</option>
-                                    <option value="4">Строительный мусор</option>
+                                    <option selected>Выберите тип топа</option>
+                                    <option value="1">на верёвках</option>
+                                    <option value="2">без воротника</option>
+                                    <option value="3">с воротником</option>
+                                    <option value="4">короткий</option>
                                 </select>
-                            <p class="text-dark">Ширина проезда</p>
+                            <p class="text-dark">Ширина лямки</p>
                             <input type="number" name="pass-width" class="form-control" placeholder="Ширина (см)">
 
-                            <p class="text-dark">Высота проезда</p>
-                            <input type="number" name="pass-height" class="form-control" placeholder="Высота (см)">
+                            <p class="text-dark">Длина лямки</p>
+                            <input type="number" name="pass-height" class="form-control" placeholder="Длина (см)">
 
-                            <p class="text-dark">Нужен поиск коммуникаций?</p>
+                            <p class="text-dark">Нужен принт на топе?</p>
                             <select class="form-select" name="communications-search" aria-label="Default select example">
                                 <option selected value="1">Нет</option>
                                 <option value="2">Да</option>
                             </select>
-
-                            <p class="text-dark">Длина ямы</p>
-                            <input type="number" name="pit-lenght" class="form-control" placeholder="Длина (см)">
-
-                            <p class="text-dark">Глубина ямы</p>
-                            <input type="number" name="pit-depth" class="form-control" placeholder="Глубина (см)">
-
-                            <p class="text-dark">Ширина ямы</p>
-                            <input type="number" name="pit-width" class="form-control" placeholder="Ширина (см)">
-                            <p class="text-dark">Местоположение</p>
-                            <select class="form-select" name="delivery" aria-label="Default select example">
-                                <option selected>Выберите ваше местоположение</option>
-                                <option value="1">Симферополь</option>
-                                <option value="2">ЮБК</option>
-                                <option value="3">Не Симферополь и не ЮБК</option>
-                            </select>
-
-                            <div>
-                                <p class="text-dark">Расстояние от симферополя до вашего местоположения</p>
-                                <input type="number" name="distance" class="form-control" placeholder="Введите расстояние (Если вы не в Симферополе и не в ЮБК) (км)">
-                            </div>
-
                             <button type="submit" href="/main" class="btn btn-lg btn-block btn-primary m-3">Рассчитать</button>
                         </div>
                     </div>
