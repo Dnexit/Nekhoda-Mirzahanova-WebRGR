@@ -56,7 +56,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Штаны</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/hydrodrill" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/pants" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
                 <div class="card m-3 box-shadow">
@@ -64,7 +64,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Футболка</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/foundation_pit" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/tee-shirt" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
             </nav>
