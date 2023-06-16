@@ -44,6 +44,19 @@ let imgObject = [
     "/images/fabrics/wool.jpg",
 ];
 
+let textObject = [
+    "Хлопок",
+    "Флакс",
+    "Сетка",
+    "Джинсы",
+    "Книтвер хз что это",
+    "Нейлон",
+    "Плюш",
+    "Полиэстер",
+    "Синтетика",
+    "Шерсть",
+];
+
 let mainImg = 0;
 let prevImg = imgObject.length - 1;
 let nextImg = 1;
@@ -61,6 +74,9 @@ function loadGallery() {
 
     let linkTag = document.getElementById("linkTag")
     linkTag.href = imgObject[mainImg];
+
+    let tilesTextElement = document.getElementById("tilesTextElement");
+    tilesTextElement.innerText = textObject[mainImg]
 
 };
 
