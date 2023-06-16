@@ -45,7 +45,7 @@
                         <a class="btn btn-light ms-2" href="login">Регистрация</a>
                     @endif
                     @if(session('isUser') == 1)
-                        <a class="btn btn-light ms-2" href="/logout">Хорошая работа, {{session('username')}}</a>
+                        <a class="btn btn-light ms-2" href="/logout">выйти</a>
                     @endif
                 </nav>
             </div>
