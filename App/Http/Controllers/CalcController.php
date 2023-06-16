@@ -16,64 +16,25 @@ class CalcController extends Controller
         ]);
 
         $price = 0;
-        if($request['pass-width'] >= 150 && $request['pass-height'] >= 250)
+        if($request['pass-width'] >= 50 && $request['pass-height'] >= 150)
         {
-            if($request['trench-lenght'] <= 30)
+            if($request['pass-height'] < 160)
             {
                 $price = 4500;
             }
             else{
-                if($request['trench-depth'] <= 120)
+                if($request['pass-width'] <= 60)
                 {
-                    if($request['trench-width'] <= 45)
-                    {
-                        $price = 150*$request['trench-lenght'];
-                    }
-                    else{
-                        $price = 200*$request['trench-lenght'];
-                    }
+                    $price = 30*$request['pass-height'];
                 }
                 else{
-                    if($request['trench-width'] <= 45)
-                    {
-                        $price = (150+($request['trench-depth']-120))*$request['trench-lenght'];
-                    }
-                    else{
-                        $price = (200+($request['trench-depth']-120))*$request['trench-lenght'];
-                    }
+                    $price = 40*$request['pass-height'];
                 }
             }
         }
-        else if($request['pass-width'] >= 160 && $request['pass-height'] >= 200)
-        {
-            if($request['trench-lenght'] <= 30)
-            {
-                $price = 5000;
-            }
-            else{
-                if($request['trench-depth'] <= 120)
-                {
-                    if($request['trench-width'] <= 45)
-                    {
-                        $price = 160*$request['trench-lenght'];
-                    }
-                    else{
-                        $price = 210*$request['trench-lenght'];
-                    }
-                }
-                else{
-                    if($request['trench-width'] <= 45)
-                    {
-                        $price = (160+($request['trench-depth']-120))*$request['trench-lenght'];
-                    }
-                    else{
-                        $price = (210+($request['trench-depth']-120))*$request['trench-lenght'];
-                    }
-                }
-            }
-        }
+       
         $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-        if($request['ground-type']>1)
+        if($request['communications-search'] > 1 )
         {
             $price = $price."₽ + 2500₽";
         }
@@ -81,11 +42,10 @@ class CalcController extends Controller
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 150 || $request['pass-height'] < 200 || $request['communications-search'] > 1)
+        if($request['pass-width'] < 40 || $request['pass-height'] < 100 || $request['pass-width'] > 80 || $request['pass-height'] > 190)
         {
             $price = 'Индивидуальный звонок';
         }
-
         $data = ['price' => $price];
         return view('price', $data);
     }
@@ -93,35 +53,29 @@ class CalcController extends Controller
     public function Pit(Request $request)
     {
         $valid = $request->validate([
-            'ground-type' => 'required|min:1',
+            'ground-type' => 'required',
             'pass-width' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
         ]);
 
         $price = 0;
-        if($request['pit-lenght'] <= 250 && $request['pit-depth'] <= 220 && $request['pit-lenghtpit-width'] <= 400)
+        if($request['pass-width'] <= 5 && $request['pass-height'] <= 30)
             if($request['ground-type'] == 1)
-                if($request['delivery'] == 1)
-                    $price = 9000;
-                else
-                    $price = 7000;
-            else if($request['delivery'] == 1) {
-                $price = '2000₽ + 2500₽';
-                $data = ['price' => $price];
-                return view('price', $data);
+                $price = 1000;
+            else if($request['ground-type'] == 2) {
+                $price = 1500;
             }
-                else {
-                    $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-                    $price += ' + 2500₽/час';
-                    $data = ['price' => $price];
-                    return view('price', $data);
-                }
+            else if($request['ground-type'] == 3) {
+                $price = 2000;
+            }
+            else if($request['ground-type'] == 4) {
+                $price = 800;
+            }
         else $price = 'Индивидуальный звонок';
 
 
-        $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-        if($request['ground-type']>1)
+        if($request['communications-search'] > 1)
         {
             $price = $price."₽ + 2500₽";
         }
@@ -129,7 +83,7 @@ class CalcController extends Controller
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 150 || $request['pass-height'] < 200 || $request['communications-search'] > 1)
+        if(['pit-lenght'] > 5 || $request['pit-lenghtpit-width'] > 30)
         {
             $price = 'Индивидуальный звонок';
         }
@@ -183,18 +137,15 @@ class CalcController extends Controller
         ]);
 
         $price = 0;
-        $cubes = ($request['area-max-length'] /2) * $request['area-lenght'] * $request['area-width'];
-        $time = $cubes / 7;
-        if($request['pass-width'] >= 150 && $request['pass-height'] >= 250)
+        if($request['pass-width'] >= 50 && $request['pass-height'] >= 100)
         {
-            $price = $time * 1500;
+            $price = $request['pass-width'] * 50;
         }
-        else if($request['pass-width'] >= 160 && $request['pass-height'] >= 200)
+        else if($request['pass-width'] >= 80 && $request['pass-height'] >= 120)
         {
-            $price = $time * 1700;
+            $price = $request['pass-width'] * 60;
         }
-        $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-        if($request['ground-type']>5)
+        if($request['communications-search'] > 1)
         {
             $price = $price."₽ + 2500₽";
         }
@@ -202,7 +153,7 @@ class CalcController extends Controller
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 150 || $request['pass-height'] < 200 || $request['communications-search'] > 1)
+        if($request['pass-width'] < 50 || $request['pass-height'] < 90 || $request['pass-width'] > 100 || $request['pass-height'] > 140 )
         {
             $price = 'Индивидуальный звонок';
         }
@@ -225,7 +176,6 @@ class CalcController extends Controller
             if($request['trench-width'] <= 12)
             {
                 $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-                //$price += ' + 2000₽';
                 $data = ['price' => $price];
                 return view('price', $data);
             }
@@ -281,18 +231,15 @@ class CalcController extends Controller
         ]);
 
         $price = 0;
-        $cubes = 1.2 * $request['area-lenght'] * $request['area-width'] * $request['foundation-depth']/1000000;
-        $time = $cubes / 7;
-        if($request['pass-width'] >= 150 && $request['pass-height'] >= 250)
+        if($request['pass-width'] >= 50 && $request['pass-height'] >= 90)
         {
-            $price = $time * 1500;
+            $price = $request['pass-width']*30;
         }
-        else if($request['pass-width'] >= 160 && $request['pass-height'] >= 200)
+        else if($request['pass-width'] >= 70 && $request['pass-height'] >= 100)
         {
-            $price = $time * 1700;
+            $price = $request['pass-width'] * 40;
         }
-        $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-        if($request['ground-type']>5)
+        if($request['communications-search'] > 1)
         {
             $price = $price."₽ + 2500₽/час";
         }
@@ -300,7 +247,7 @@ class CalcController extends Controller
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 150 || $request['pass-height'] < 200 || $request['communications-search'] > 1)
+        if($request['pass-width'] >= 80 || $request['pass-height'] >= 110 )
         {
             $price = 'Индивидуальный звонок';
         }
