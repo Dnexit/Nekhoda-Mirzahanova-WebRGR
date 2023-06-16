@@ -67,10 +67,6 @@ Route::get('/fabrics', function () {
     return view('fabrics');
 });
 
-Route::get('/basket', function () {
-    return view('basket');
-});
-
 Route::get('/price', function () {
     return view('price');
 });
