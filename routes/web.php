@@ -39,9 +39,9 @@ Route::get('/top', function () {
     return view('top');
 });
 
-Route::post('/planning', [CalcController::class,'Planning']);
-Route::get('/planning', function () {
-    return view('planning');
+Route::post('/socks', [CalcController::class,'Socks']);
+Route::get('/socks', function () {
+    return view('socks');
 });
 
 Route::post('/terracing', [CalcController::class,'Terracing']);
@@ -59,8 +59,8 @@ Route::get('/tee-shirt', function () {
     return view('tee-shirt');
 });
 
-Route::get('/hydrohammer', function () {
-    return view('hydrohammer');
+Route::get('/jeans', function () {
+    return view('jeans');
 });
 
 Route::get('/fabrics', function () {

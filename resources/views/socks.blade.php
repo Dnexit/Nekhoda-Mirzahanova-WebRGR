@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-        <form name="planning-form"  method="post" action="/planning">
+        <form name="socks-form"  method="post" action="/socks">
             @csrf
             <div class="container">
                 <div class="card-deck mb-3 text-center">
@@ -23,7 +23,7 @@
                         </div>
                         <div class="card-body">
                             <p class="text-dark">Размер стопы</p>
-                            <input type="number" name="pass-width" class="form-control" placeholder="Размер стопы (см)">
+                            <input type="number" name="pass-size" class="form-control" placeholder="Размер стопы (см)">
 
                             <p class="text-dark">Высота носка</p>
                             <input type="number" name="pass-height" class="form-control" placeholder="Высота (см)">

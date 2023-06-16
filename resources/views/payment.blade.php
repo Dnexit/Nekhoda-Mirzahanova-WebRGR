@@ -28,7 +28,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Носки</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/planning" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/socks" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
             </nav>
@@ -48,7 +48,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Джинсы</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/hydrohammer" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/jeans" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
                 <div class="card m-3 box-shadow">
