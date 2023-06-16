@@ -15,7 +15,7 @@
         </div>
     @endif
 
-        <form name="trench-form" method="post" action="/trench">
+        <form name="dress-form" method="post" action="/dress">
             @csrf
             <div class="container">
                 <div class="card-deck mb-3 text-center">

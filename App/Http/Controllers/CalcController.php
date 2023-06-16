@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CalcController extends Controller
 {
-    public function Trench(Request $request)
+    public function dress(Request $request)
     {
         $valid = $request->validate([
             'ground-type' => 'required|min:1',
@@ -33,7 +33,6 @@ class CalcController extends Controller
             }
         }
        
-        $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
         if($request['communications-search'] > 1 )
         {
             $price = $price."₽ + 1000";
@@ -42,7 +41,7 @@ class CalcController extends Controller
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 40 || $request['pass-height'] < 100 || $request['pass-width'] > 80 || $request['pass-height'] > 190)
+        if($request['pass-width'] < 40 || $request['pass-width'] > 80  || $request['pass-height'] < 150|| $request['pass-height'] > 190)
         {
             $price = 'Индивидуальный звонок';
         }

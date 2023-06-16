@@ -29,9 +29,9 @@ Route::post('/reviews', [ReviewsController::class,'AddReview']);
 Route::get('/reviews', [ReviewsController::class,'Reviews'])->name('reviews');
 
 
-Route::post('/trench', [CalcController::class,'Trench']);
-Route::get('/trench', function () {
-    return view('trench');
+Route::post('/dress', [CalcController::class,'dress']);
+Route::get('/dress', function () {
+    return view('dress');
 });
 
 Route::post('/top', [CalcController::class,'Top']);

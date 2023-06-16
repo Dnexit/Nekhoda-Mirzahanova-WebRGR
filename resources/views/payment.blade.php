@@ -12,7 +12,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Платье</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/trench" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/dress" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
                 <div class="card m-4 box-shadow">
