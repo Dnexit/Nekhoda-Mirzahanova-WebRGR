@@ -34,9 +34,9 @@ Route::get('/trench', function () {
     return view('trench');
 });
 
-Route::post('/pit', [CalcController::class,'Pit']);
-Route::get('/pit', function () {
-    return view('pit');
+Route::post('/top', [CalcController::class,'Top']);
+Route::get('/top', function () {
+    return view('top');
 });
 
 Route::post('/planning', [CalcController::class,'Planning']);

@@ -4,7 +4,7 @@
 
 @section("page-content")
     <h1 class="m-5">Панель админа</h1>
-        <form name="adminpanel-form"  method="post" action="/pit">
+        <form name="adminpanel-form"  method="post" action="/top">
             @csrf
             <div class="container">
                 <div class="card-deck mb-3 text-center">

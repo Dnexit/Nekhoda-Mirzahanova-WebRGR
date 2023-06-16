@@ -20,7 +20,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Топ</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/pit" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/top" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
                 <div class="card m-4 box-shadow">

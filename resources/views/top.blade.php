@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-        <form name="pit-form"  method="post" action="/pit">
+        <form name="top-form"  method="post" action="/top">
             @csrf
             <div class="container">
                 <div class="card-deck mb-3 text-center">
@@ -23,8 +23,8 @@
                         </div>
                         <div class="card-body">
                             <p class="text-dark">Тип топа</p>
-                                <select class="form-select" name="ground-type" aria-label="Default select example">
-                                    <option selected>Выберите тип топа</option>
+                                <select class="form-select" name="top-type" aria-label="Default select example">
+                                    <!-- <option selected>Выберите тип топа</option> -->
                                     <option value="1">на верёвках</option>
                                     <option value="2">без воротника</option>
                                     <option value="3">с воротником</option>
@@ -34,7 +34,7 @@
                             <input type="number" name="pass-width" class="form-control" placeholder="Ширина (см)">
 
                             <p class="text-dark">Длина лямки</p>
-                            <input type="number" name="pass-height" class="form-control" placeholder="Длина (см)">
+                            <input type="number" name="pass-length" class="form-control" placeholder="Длина (см)">
 
                             <p class="text-dark">Нужен принт на топе?</p>
                             <select class="form-select" name="communications-search" aria-label="Default select example">
