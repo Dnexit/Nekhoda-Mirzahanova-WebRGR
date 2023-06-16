@@ -28,6 +28,7 @@
         <div id="tilesView">
             <div id="tilesContainer"></div>
         </div>
+        <p id="tilesTextElement">Описание картинок</p>
     </div>
     <script src="js/carousel.js" defer></script>
 @endsection
