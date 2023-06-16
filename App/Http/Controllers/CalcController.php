@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CalcController extends Controller
 {
-    public function Trench(Request $request)
+    public function dress(Request $request)
     {
         $valid = $request->validate([
             'ground-type' => 'required|min:1',
@@ -33,7 +33,6 @@ class CalcController extends Controller
             }
         }
        
-        $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
         if($request['communications-search'] > 1 )
         {
             $price = $price."₽ + 1000";
@@ -42,7 +41,7 @@ class CalcController extends Controller
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 40 || $request['pass-height'] < 100 || $request['pass-width'] > 80 || $request['pass-height'] > 190)
+        if($request['pass-width'] < 40 || $request['pass-width'] > 80  || $request['pass-height'] < 150|| $request['pass-height'] > 190)
         {
             $price = 'Индивидуальный звонок';
         }
@@ -90,35 +89,32 @@ class CalcController extends Controller
         return view('price', $data);
     }
 
-    public function Planning(Request $request)
+    public function Socks(Request $request)
     {
         $valid = $request->validate([
-            'pass-width' => 'required',
+            'pass-size' => 'required',
             'pass-height' => 'required',
             'communications-search' => 'required',
         ]);
 
         $price = 0;
-        $cubes = ($request['area-max-length'] /2) * $request['area-lenght'] * $request['area-width'];
-        $time = $cubes / 7;
-        if($request['pass-width'] >= 150 && $request['pass-height'] >= 250)
+        if($request['pass-size'] >= 36 && $request['pass-height'] >= 3 && $request['pass-height'] < 6)
         {
-            $price = $time * 1500;
+            $price = 50;
         }
-        else if($request['pass-width'] >= 160 && $request['pass-height'] >= 200)
+        else if($request['pass-size'] >= 36 && $request['pass-height'] >= 6 && $request['pass-height'] <= 10)
         {
-            $price = $time * 1700;
+            $price = 100;
         }
-        $price += $this->GetPriceLocation($request['delivery'], $request['distance']);
-        if($request['ground-type']>5)
+        if($request['communications-search'] > 1)
         {
-            $price = $price."₽ + 2500₽";
+            $price = $price."₽ + 150₽";
         }
         else
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 150 || $request['pass-height'] < 200 || $request['communications-search'] > 1)
+        if($request['pass-size'] < 36 || $request['pass-size'] > 48 || $request['pass-height'] < 3 || $request['pass-height'] > 10)
         {
             $price = 'Индивидуальный звонок';
         }
