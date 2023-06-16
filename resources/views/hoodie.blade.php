@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-        <form name="terracing-form"  method="post" action="/terracing">
+        <form name="hoodie-form"  method="post" action="/hoodie">
             @csrf
             <div class="container">
                 <div class="card-deck mb-3 text-center">
