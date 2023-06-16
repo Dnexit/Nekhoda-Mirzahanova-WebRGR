@@ -23,7 +23,7 @@ class ReviewsController extends Controller
             $data[$d['id']] = [
                 'id' => $d['id'],
                 'fio' => ReviewModel::find($d['id'])->user['FIO'],
-                'text' => $d['review_text'],
+                'text' => htmlspecialchars_decode($d['review_text']),
                 'timestamp' => $d['timestamp'],
             ];
         }

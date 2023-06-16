@@ -6,6 +6,7 @@
 
     <title>@yield("page-title")</title>
     <script  type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/jas4xhtwmgxn0u44vlhq5icxap8y48c9i4kf6bx7xeqgh8rk/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">

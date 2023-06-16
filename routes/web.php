@@ -44,9 +44,9 @@ Route::get('/socks', function () {
     return view('socks');
 });
 
-Route::post('/terracing', [CalcController::class,'Terracing']);
-Route::get('/terracing', function () {
-    return view('terracing');
+Route::post('/hoodie', [CalcController::class,'hoodie']);
+Route::get('/hoodie', function () {
+    return view('hoodie');
 });
 
 Route::post('/pants', [CalcController::class,'Pants']);
