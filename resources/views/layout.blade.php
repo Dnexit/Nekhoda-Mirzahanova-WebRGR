@@ -76,7 +76,7 @@
                         <a class="nav-link ms-5" href="/reviews"></a>
                         <a class="btn btn-light ms-2" href="/adminlogout">Админ: {{session('nickname')}} - выйти</a>
                     @endif
-                    @if(session('isUser') != 1)
+                    @if(session('isUser') != 1 && session('isModer') != 1 && session('isAdmin') != 1 )
                         <a class="btn btn-light ms-2" href="signin">Войти</a>
                         <a class="btn btn-light ms-2" href="login">Регистрация</a>
                     @endif
