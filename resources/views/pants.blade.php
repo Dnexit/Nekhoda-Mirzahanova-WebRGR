@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-    <form name="hydrodrill-form"  method="post" action="/hydrodrill">
+    <form name="pants-form"  method="post" action="/pants">
         @csrf
         <div class="container">
             <div class="card-deck mb-3 text-center">

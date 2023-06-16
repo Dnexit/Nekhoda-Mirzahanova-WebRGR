@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-        <form name="foundation_pit-form"  method="post" action="/foundation_pit">
+        <form name="tee-shirt-form"  method="post" action="/tee-shirt">
             @csrf
             <div class="container">
                 <div class="card-deck mb-3 text-center">
@@ -32,8 +32,6 @@
                             <select class="form-select" name="communications-search" aria-label="Default select example">
                                 <option selected value="1">Нет</option>
                                 <option value="2">Да</option>
-                            </select>
-                            <select class="form-select" name="delivery" aria-label="Default select example">
                             </select>
                             <button type="submit" href="/main" class="btn btn-lg btn-block btn-primary m-3">Рассчитать</button>
                         </div>

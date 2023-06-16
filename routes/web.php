@@ -49,14 +49,14 @@ Route::get('/terracing', function () {
     return view('terracing');
 });
 
-Route::post('/hydrodrill', [CalcController::class,'Hydrodrill']);
-Route::get('/hydrodrill', function () {
-    return view('hydrodrill');
+Route::post('/pants', [CalcController::class,'Pants']);
+Route::get('/pants', function () {
+    return view('pants');
 });
 
-Route::post('/foundation_pit', [CalcController::class,'FoundationPit']);
-Route::get('/foundation_pit', function () {
-    return view('foundation_pit');
+Route::post('/tee-shirt', [CalcController::class,'TeeShirt']);
+Route::get('/tee-shirt', function () {
+    return view('tee-shirt');
 });
 
 Route::get('/hydrohammer', function () {
