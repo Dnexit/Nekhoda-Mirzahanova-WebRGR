@@ -40,7 +40,7 @@
                         <h4 class="my-0 font-weight-normal text-dark">Худи</h4>
                     </div>
                     <div class="card-body">
-                        <a type="button" href="/terracing" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
+                        <a type="button" href="/hoodie" class="btn btn-lg btn-block btn-primary">Рассчитать</a>
                     </div>
                 </div>
                 <div class="card m-3 box-shadow">

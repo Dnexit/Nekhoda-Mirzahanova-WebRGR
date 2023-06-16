@@ -123,7 +123,7 @@ class CalcController extends Controller
         return view('price', $data);
     }
 
-    public function Terracing(Request $request)
+    public function hoodie(Request $request)
     {
         $valid = $request->validate([
             'pass-width' => 'required',
@@ -132,7 +132,7 @@ class CalcController extends Controller
         ]);
 
         $price = 0;
-        if($request['pass-width'] >= 50 && $request['pass-height'] >= 100)
+        if($request['pass-width'] >= 50 && $request['pass-width'] < 80 && $request['pass-height'] >= 100 && $request['pass-height'] < 120)
         {
             $price = $request['pass-width'] * 50;
         }
@@ -142,13 +142,13 @@ class CalcController extends Controller
         }
         if($request['communications-search'] > 1)
         {
-            $price = $price."₽ + 2500₽";
+            $price = $price."₽ + 1500";
         }
         else
         {
             $price = $price."₽";
         }
-        if($request['pass-width'] < 50 || $request['pass-height'] < 90 || $request['pass-width'] > 100 || $request['pass-height'] > 140 )
+        if($request['pass-width'] < 50 || $request['pass-height'] > 90 || $request['pass-width'] < 100 || $request['pass-height'] > 140 )
         {
             $price = 'Индивидуальный звонок';
         }
