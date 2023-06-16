@@ -21,8 +21,10 @@
                 <h3 class="masthead-brand">My Dress</h3>
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link" href="/main">Главная</a>
+                    <a class="nav-link" href="/fabrics">Ткани</a>
                     <a class="nav-link" href="/payment">Расчет</a>
                     <a class="nav-link" href="/reviews">Отзывы</a>
+                    <a class="nav-link" href="/basket">Корзина</a>
                     <a class="nav-link ms-5" href="/reviews"></a>
                     @if(session('isModer') == 1)
                         <a class="nav-link" href="/moderpanel">Панель модератора</a>

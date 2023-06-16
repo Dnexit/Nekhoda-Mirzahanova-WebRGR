@@ -28,6 +28,7 @@ Route::get('/payment', function () {
 Route::post('/reviews', [ReviewsController::class,'AddReview']);
 Route::get('/reviews', [ReviewsController::class,'Reviews'])->name('reviews');
 
+
 Route::post('/trench', [CalcController::class,'Trench']);
 Route::get('/trench', function () {
     return view('trench');
@@ -60,6 +61,14 @@ Route::get('/foundation_pit', function () {
 
 Route::get('/hydrohammer', function () {
     return view('hydrohammer');
+});
+
+Route::get('/fabrics', function () {
+    return view('fabrics');
+});
+
+Route::get('/basket', function () {
+    return view('basket');
 });
 
 Route::get('/price', function () {
