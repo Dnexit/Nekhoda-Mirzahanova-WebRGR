@@ -34,9 +34,45 @@
                         <a class="btn btn-light ms-2" href="/adminlogout">Модератор: {{session('nickname')}} - выйти</a>
                     @endif
                     @if(session('isAdmin') == 1)
-                        <a class="nav-link" href="/adminpanel">Панель администратора</a>
-                        <a class="nav-link" href="/reviews">Редактор отзывов</a>
-                        <a class="nav-link" href="/moders_editor">Редактор модераторов</a>
+                        <style>
+                            .dropdown {
+                                position: relative;
+                                display: inline-block;
+                                min-width: 200px;
+                            }
+
+                            .dropdown-content {
+                                display: none;
+                                position: absolute;
+
+                                min-width: 200px;
+                                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                z-index: 1;
+                            }
+
+                            .dropdown-content a {
+                                color: black;
+
+                                text-decoration: none;
+                                display: block;
+                            }
+
+                            .dropdown-content a:hover {background-color: rgba(221, 221, 221, 0.11);}
+
+                            .dropdown:hover .dropdown-content {display: block;}
+
+                            .dropdown:hover .dropbtn {background-color: #882bbd;}
+                        </style>
+
+                        <div class="dropdown">
+                            <a class="nav-link menubase dropbtn">Администрирование</a>
+                            <div class="dropdown-content">
+                                <a class="nav-link nav-admin" style="margin-left: 0;" href="/adminpanel">Панель администратора</a>
+                                <a class="nav-link nav-admin" style="margin-left: 0;" href="/reviews">Редактор отзывов</a>
+                                <a class="nav-link nav-admin" style="margin-left: 0;" href="/moders_editor">Редактор модераторов</a>
+                            </div>
+                        </div>
+
                         <a class="nav-link ms-5" href="/reviews"></a>
                         <a class="btn btn-light ms-2" href="/adminlogout">Админ: {{session('nickname')}} - выйти</a>
                     @endif
