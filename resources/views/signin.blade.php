@@ -42,5 +42,6 @@
                     </div>
                 @endif
             </div>
+            <input type="button" onclick="history.back();" value="Назад"/>
         </form>
 @endsection

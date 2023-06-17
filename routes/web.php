@@ -19,6 +19,8 @@ use App\Http\Controllers\DBController;
 
 Route::get('/', [MainController::class, 'Main']);
 
+
+
 Route::get('/main', [MainController::class, 'Main'])->name('main');
 
 Route::get('/payment', function () {
@@ -88,6 +90,7 @@ Route::get('/signin', function () {
 Route::post('/adminsignin', [DBController::class,'Adminsignin']);
 Route::get('/adminsignin', function () {
     return view('adminsignin');
+    return redirect()->back();
 });
 
 Route::get('/adminpanel',[DBController::class,'Adminpanel']);
