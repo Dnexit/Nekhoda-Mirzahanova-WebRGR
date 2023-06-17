@@ -83,9 +83,7 @@ Route::get('/login', function () {
 });
 
 Route::post('/signin', [DBController::class,'Signin']);
-Route::get('/signin', function () {
-    return view('signin');
-});
+Route::get('/signin', [DBController::class,'SigninView']);
 
 Route::post('/adminsignin', [DBController::class,'Adminsignin']);
 Route::get('/adminsignin', function () {

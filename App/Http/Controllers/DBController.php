@@ -8,6 +8,8 @@ use App\Models\ModeratorModel;
 use App\Models\ReviewModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class DBController extends Controller
 {
@@ -49,6 +51,11 @@ class DBController extends Controller
         return redirect()->route('main');
     }
 
+    public function SigninView()
+    {
+        return view('signin', ['redirectlink' => URL::previous()]);
+    }
+
     public function Signin(Request $request)
     {
         $valid = $request->validate([
@@ -61,6 +68,7 @@ class DBController extends Controller
             session(['isUser' => 1]);
             session(['username' => UserModel::find($request->input('user-email'))->FIO]);
             session(['email' => $request->input('user-email')]);
+            return Redirect::to($request->input('redirectlink'));
         }
         else
         {
