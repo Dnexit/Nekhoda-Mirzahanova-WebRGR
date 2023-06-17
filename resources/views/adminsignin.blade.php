@@ -42,6 +42,7 @@
                     <div class="alert alert-success">
                         {{session('nickname')}}, вы вошли в систему как Администратор! <a class="text-dark" href="adminlogout">Выйти</a>.
                     </div>
+
                 @endif
                 @if(session('isModer') == 1)
                     <div class="alert alert-success">
