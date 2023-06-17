@@ -85,10 +85,12 @@ Route::get('/login', function () {
 Route::post('/signin', [DBController::class,'Signin']);
 Route::get('/signin', [DBController::class,'SigninView']);
 
+Route::get('/register/{guid}', [DBController::class,'Register']);
+Route::get('/register', [DBController::class,'SigninView']);
+
 Route::post('/adminsignin', [DBController::class,'Adminsignin']);
 Route::get('/adminsignin', function () {
     return view('adminsignin');
-    return redirect()->back();
 });
 
 Route::get('/adminpanel',[DBController::class,'Adminpanel']);

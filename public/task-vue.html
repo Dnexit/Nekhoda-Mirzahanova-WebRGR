@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание с Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <style scoped>
+        .user-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .user-card__photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .user-card__name {
+            margin-top: 10px;
+        }
+
+        .user-card__description {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="components-demo">
+    <button-counter></button-counter>
+</div>
+<script>
+    Vue.component('button-counter', {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        photo: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        template: '<template> <div class="user-card"> <img :src="photo" :alt="name" class="user-card__photo"> <h2 class="user-card__name">{{ name }}</h2> <p class="user-card__description">{{ description }}</p> </div> </template>'
+    })
+    new Vue({ el: '#components-demo' })
+
+    }</script>
+</body>
+</html>
