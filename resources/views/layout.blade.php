@@ -89,7 +89,14 @@
 
         <main role="main" class="inner cover">
 
+            @if(isset($data['send_registration']))
+                <div class="alert alert-success">
+                    Письмо с подтверждением успешно отправлено на адрес {{$data['send_registration']}}!
+                </div>
+            @endif
+
             @yield("page-content")
+
         </main>
     </div>
     <script  type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

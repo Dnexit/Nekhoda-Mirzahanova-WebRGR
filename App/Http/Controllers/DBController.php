@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AdminModel;
 use App\Models\ModeratorModel;
 use App\Models\ReviewModel;
+use App\Models\TempUserModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -22,20 +23,36 @@ class DBController extends Controller
             'password-confirmation' => 'required|min:4',
         ]);
 
-        $user = new UserModel();
+        $user = new TempUserModel();
 
+        $user->guid = ReviewsController::GUIDv4();
         $user->email = $request->input('user-email');
         $user->FIO = $request->input('user-name');
         $user->password = $request->input('user-password');
 
+        ReviewsController::SendMail($user->email, $user->FIO, $user->guid);
+
         $user->save();
 
-        session(['isUser' => 1]);
-        session(['username' => $request->input('user-name')]);
-        session(['email' => $request->input('user-email')]);
+        $data = [];
+        $data['send_registration'] = $user->email;
 
-        session(['isUser' => 1]);
-        return view('login');
+        return view('/main', ['data' => $data]);
+
+//        $user = new UserModel();
+//
+//        $user->email = $request->input('user-email');
+//        $user->FIO = $request->input('user-name');
+//        $user->password = $request->input('user-password');
+//
+//        $user->save();
+//
+//        session(['isUser' => 1]);
+//        session(['username' => $request->input('user-name')]);
+//        session(['email' => $request->input('user-email')]);
+//
+//        session(['isUser' => 1]);
+//        return view('login');
     }
 
     public function Logout()
@@ -78,6 +95,38 @@ class DBController extends Controller
         }
 
         return view('signin');
+    }
+
+    public function Register($guid)
+    {
+        if (is_null($guid))
+        {
+            return Redirect::to('/');
+        }
+        $guiduser = TempUserModel::select("*")->where("guid", $guid);
+        if($guiduser->exists())
+        {
+            $user = new UserModel();
+
+            $user->email = TempUserModel::find($guid)->email;
+            $user->FIO = TempUserModel::find($guid)->fio;
+            $user->password = TempUserModel::find($guid)->password;
+
+            $user->save();
+
+            TempUserModel::where('guid', $guid)->delete();
+
+            session(['isUser' => 1]);
+            session(['username' => $user->FIO]);
+            session(['email' => $user->email]);
+
+            session(['isUser' => 1]);
+            return view('/signin');
+        }
+        else
+        {
+            return Redirect::to('/');
+        }
     }
 
     public function Adminsignin(Request $request)
